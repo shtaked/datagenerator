@@ -1,0 +1,5 @@
+Basic random data generator implementation
+It takes json configuration file as input and provides multithreaded data generation.
+Please take a look to comments of config/config.go to see all possible configuration values.
+Currently data is generated with separate goroutine per column.
+It can be improved with multiples goroutines per column, but then it will be more complicated to support taxonomy.

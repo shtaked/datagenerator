@@ -1,0 +1,55 @@
+{
+  "columns": [
+    {
+      "name": "Brand",
+      "type": "string",
+      "regexp": "[A-Z]{3}"
+    },
+    {
+      "name": "Type",
+      "type": "string",
+      "regexp": "[A-Z]{15}",
+      "unique_for_column_value": "Brand"
+    },
+    {
+      "name": "Amount",
+      "type": "int",
+      "low_bound": 0,
+      "up_bound": 2000
+    },
+    {
+      "name": "Engine Volume",
+      "type": "float",
+      "low_bound": 0.5,
+      "up_bound": 10.0
+    },
+    {
+      "name": "Manufacture year",
+      "type": "year"
+    },
+    {
+      "name": "Hybrid",
+      "type": "bool"
+    },
+    {
+      "name": "Creator's Name",
+      "type": "name"
+    },
+    {
+      "name": "Serial number",
+      "type": "string",
+      "regexp": "[A-Z]{3}[0-9]{10}",
+      "unique": true
+    }
+  ],
+  "custom_types": [
+    {
+      "name": "name",
+      "parent": "string",
+      "regexp": "(John|Mike|Bob|Peter) (Douglas|Brown|Gray|Pink|Stevenson)"
+    }
+  ],
+  "row_count": 1000000,
+  "output": "output.tsv",
+  "compression": "gzip"
+}
